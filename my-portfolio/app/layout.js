@@ -1,14 +1,12 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 
 import { Suspense } from "react";
 import Loading from "./loading";
 
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
-import { Providers } from "./components/Providers";
-
-const inter = Inter({ subsets: ["latin"] });
+import Providers from "./components/ThemeProvider";
+import ThemeChanger from "./components/ThemeChanger";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,11 +15,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <body className={inter.className}>
+    <html lang="en">
+      <body>
         <Suspense fallback={<Loading />}>
           <Navbar />
-          <Providers>{children}</Providers>
+          <Providers>
+            <div className="overflow-x-hidden">
+              <ThemeChanger />
+              {children}
+            </div>
+          </Providers>
           <Footer />
         </Suspense>
       </body>
