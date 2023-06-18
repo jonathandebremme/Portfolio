@@ -57,7 +57,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div>
+    <div className="max-w-[700px] mx-auto">
       <form onSubmit={sendEmail}>
         <div className="form-group mb-6">
           <input
@@ -69,7 +69,7 @@ export default function ContactForm() {
         font-normal
         text-zinc-700
         dark:text-zinc-200
-        bg-white dark:bg-cyan-900 bg-clip-padding
+        bg-white dark:bg-slate-800 bg-clip-padding
         border border-solid border-zinc-300 dark:border-zinc-500
         rounded
         transition
@@ -96,7 +96,7 @@ export default function ContactForm() {
           font-normal
           text-zinc-700
           dark:text-zinc-200
-          bg-white dark:bg-gray-800 bg-clip-padding
+          bg-white dark:bg-slate-800 bg-clip-padding
           border border-solid border-zinc-300 dark:border-zinc-500
           rounded
           transition
