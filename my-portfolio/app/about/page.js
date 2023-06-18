@@ -8,14 +8,12 @@ import {
 import { SiCss3, SiTailwindcss, SiExpress, SiNextdotjs } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 
+import Heading from "../components/Heading";
+
 export default function About() {
   return (
     <main className="min-h-screen p-24">
-      <div className="text-center mt-12">
-        <h1 className="text-5xl font-semibold leading-normal mb-2 text-zinc-900 dark:text-zinc-50">
-          About
-        </h1>
-      </div>
+      <Heading title="About" paragraph="A little about me" />
       <div className="text-center mt-12">
         <h3 className="text-4xl font-semibold leading-normal mb-2 text-zinc-900 dark:text-zinc-50">
           Jonathan De Bremme
