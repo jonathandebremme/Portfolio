@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Logo from "./Logo";
+import ThemeChanger from "./ThemeChanger";
 
 export default function Navbar() {
   return (
@@ -23,6 +24,9 @@ export default function Navbar() {
           </li>
           <li className="p-4 font-medium hover:text-blue-400 transition duration-150 ease-in-out">
             <Link href="/contact">Contact</Link>
+          </li>
+          <li className="p-4">
+            <ThemeChanger />
           </li>
         </ul>
       </div>
