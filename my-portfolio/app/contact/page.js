@@ -13,19 +13,23 @@ export default function Contact() {
           <div className="block rounded-xl mt-[-100px] bg-white dark:bg-slate-800 shadow-xl py-10 md:py-12 px-4 md:px-6">
             <div className="grid grid-cols-3 mb-12 max-w-[700px] mx-auto">
               <div className="mb-12 lg:mb-0 text-center mx-auto">
-                <IoIosMail className="w-6 h-6 md:w-8 md:h-8 text-blue-400 mb-6 mx-auto hover:text-green-300" />
+                <a href="mailto:jonathandebremme@hotmail.be">
+                  <IoIosMail className="w-6 h-6 md:w-12 md:h-12 text-blue-400 mb-6 mx-auto hover:text-green-300" />
+                </a>{" "}
                 <h6 className="font-medium text-sm md:text-md text-zinc-800 dark:text-zinc-50">
                   <a href="mailto:jonathandebremme@hotmail.be">Email Me</a>
                 </h6>
               </div>
               <div className="mb-12 lg:mb-0 text-center mx-auto">
-                <IoLocationSharp className="w-6 h-6 md:w-8 md:h-8 text-blue-400 mb-6 mx-auto hover:text-green-300" />
+                <IoLocationSharp className="w-6 h-6 md:w-12 md:h-12 text-blue-400 mb-6 mx-auto hover:text-green-300" />
                 <h6 className="font-medium text-sm md:text-md text-zinc-800 dark:text-zinc-50">
-                  SLC, UT
+                  GHENT, BE
                 </h6>
               </div>
               <div className="mb-6 md:mb-0 text-center mx-auto">
-                <IoCallSharp className="w-6 h-6 md:w-8 md:h-8 text-blue-400 mb-6 mx-auto hover:text-green-300" />
+                <a href="tel:+32472549234">
+                  <IoCallSharp className="w-6 h-6 md:w-12 md:h-12 text-blue-400 mb-6 mx-auto hover:text-green-300" />
+                </a>
                 <h6 className="font-medium text-sm md:text-md text-zinc-800 dark:text-zinc-50">
                   <a href="tel:+32472549234">Call Me</a>
                 </h6>
