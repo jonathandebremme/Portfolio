@@ -69,15 +69,3 @@ body {
 .toggler-icon {
   color: #fafafa;
 }
-
-[data-darkmode="true"] {
-  background-color: #86efac;
-}
-
-[data-darkmode="true"] .icon-toggler-container {
-  background-image: linear-gradient(to right, #86efac, #60a5fa);
-}
-
-[data-darkmode="true"] .toggler-icon {
-  color: #fafafa;
-}

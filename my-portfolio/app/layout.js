@@ -14,15 +14,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
+
       <body className=" text-zinc-800 bg-zinc-50 dark:text-zinc-50 dark:bg-slate-900">
         <Suspense fallback={<Loading />}>
-          <Navbar />
-          <Providers>{children}</Providers>
-          <Footer />
+          <Providers>
+            <Navbar />
+            {children}
+            <Footer />
+          </Providers>
         </Suspense>
       </body>
     </html>
