@@ -69,3 +69,8 @@ body {
 .toggler-icon {
   color: #fafafa;
 }
+
+#homepage {
+  position: fixed;
+  z-index: 1;
+}

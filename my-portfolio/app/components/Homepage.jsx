@@ -7,7 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Homepage() {
   return (
-    <div>
+    <div id="homepage">
       <div>
         <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">
           I'm Jonathan
@@ -30,6 +30,7 @@ export default function Homepage() {
           role="button"
           aria-label="Resume link button"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Resume
         </a>

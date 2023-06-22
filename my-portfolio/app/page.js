@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <main className="p-24">
-        <Homepage />
+        <Homepage id="homepage" />
         <Background />
       </main>
     </>
