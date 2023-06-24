@@ -16,7 +16,7 @@ export default function Homepage() {
           <div className="mt-12 lg:mt-0">
             <div>
               <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">
-                I'm Jonathan
+                I&apos;m Jonathan
                 <br />I build
                 <span className="text-blue-400 hover:text-green-300 transition duration-150 ease-in-out">
                   <TypeAnimation
