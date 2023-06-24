@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Loading from "./loading";
 
 import Providers from "./components/ThemeProvider";
@@ -20,7 +21,10 @@ export default function RootLayout({ children }) {
       <Suspense fallback={<Loading />}>
         <body className=" text-zinc-800 bg-zinc-50 dark:text-zinc-50 dark:bg-slate-900">
           <Providers>
-            <LayoutProvider>{children}</LayoutProvider>
+            <LayoutProvider>
+              {children}
+              <Analytics />
+            </LayoutProvider>
           </Providers>
         </body>
       </Suspense>
