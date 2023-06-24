@@ -6,7 +6,7 @@ import Heading from "../components/Heading";
 
 export default function Contact() {
   return (
-    <main className="min-h-screen p-24">
+    <main>
       <Heading title="Contact" paragraph="Let's get in touch!" />
       <div className="container mt-52 md:mt-32 px-6 mx-auto lg:w-2/3">
         <div className="container text-slate-800 px-4 md:px-12 relative top:0 md:top-20">

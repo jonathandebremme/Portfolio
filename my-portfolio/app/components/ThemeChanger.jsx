@@ -19,11 +19,9 @@ export default function ThemeChanger() {
     return null;
   }
 
-  console.log(systemTheme + " " + theme);
   const toggleSwitch = () => {
     currentTheme == "dark" ? setTheme("light") : setTheme("dark");
     setIsOn(!isOn);
-    console.log(theme + " " + currentTheme);
   };
 
   const spring = {
@@ -35,7 +33,7 @@ export default function ThemeChanger() {
   return (
     <div
       onClick={toggleSwitch}
-      className="icon-toggler-container"
+      className="icon-toggler-container p-4 mr-5"
       style={{ justifyContent: isOn ? "flex-end" : "flex-start" }}
     >
       <motion.div className="handle" layout transition={spring}>
