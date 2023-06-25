@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Logo from "./Logo";
 import ThemeChanger from "./ThemeChanger";
 import SocialMedia from "./SocialMedia";
+import { menuVariants } from "../constants";
 
 const navButtonOpenVariant = {
   open: { d: "M3.06061 2.99999L21.0606 21" },
@@ -15,32 +16,6 @@ const navButtonCloseVariant = {
   open: { d: "M3.00006 21.0607L21 3.06064" },
   moving: { d: "M0 14.5L24 14.5" },
   closed: { d: "M0 14.5L15 14.5" },
-};
-
-const showLogoVariant = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      delay: 0.5,
-    },
-  },
-  closed: { y: -300, opacity: 0 },
-};
-
-const showSocialsVariant = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      delay: 1.75,
-    },
-  },
-  closed: { y: 300, opacity: 0 },
 };
 
 export default function Navbar() {
@@ -110,7 +85,7 @@ export default function Navbar() {
         >
           <motion.li
             animate={showNav ? "open" : "closed"}
-            variants={showLogoVariant}
+            variants={menuVariants.logoVariant}
             className="inline-flex fixed top-20 p-4"
           >
             <Link href="/" onClick={handleNav}>
@@ -118,45 +93,65 @@ export default function Navbar() {
             </Link>
           </motion.li>
           <li className="text-zinc-900 dark:text-zinc-200 text-2xl hover:text-blue-400 w-full text-center p-4">
-            <Link
-              className="dark:hover:text-blue-400 transition duration-150 ease-in-out"
-              href="/"
-              onClick={handleNav}
+            <motion.div
+              animate={showNav ? "open" : "closed"}
+              variants={menuVariants.homeVariant}
             >
-              Home
-            </Link>
+              <Link
+                className="dark:hover:text-blue-400 transition duration-150 ease-in-out"
+                href="/"
+                onClick={handleNav}
+              >
+                Home
+              </Link>
+            </motion.div>
           </li>
           <li className="text-zinc-900 dark:text-zinc-200 text-2xl hover:text-blue-400 w-full text-center p-4">
-            <Link
-              className="dark:hover:text-blue-400 transition duration-150 ease-in-out"
-              href="/about"
-              onClick={handleNav}
+            <motion.div
+              animate={showNav ? "open" : "closed"}
+              variants={menuVariants.aboutVariant}
             >
-              About
-            </Link>
+              <Link
+                className="dark:hover:text-blue-400 transition duration-150 ease-in-out"
+                href="/about"
+                onClick={handleNav}
+              >
+                About
+              </Link>
+            </motion.div>
           </li>
           <li className="text-zinc-900 dark:text-zinc-200 text-2xl hover:text-blue-400 w-full text-center p-4">
-            <Link
-              className="dark:hover:text-blue-400 transition duration-150 ease-in-out"
-              href="/portfolio"
-              onClick={handleNav}
+            <motion.div
+              animate={showNav ? "open" : "closed"}
+              variants={menuVariants.portfolioVariant}
             >
-              Portfolio
-            </Link>
+              <Link
+                className="dark:hover:text-blue-400 transition duration-150 ease-in-out"
+                href="/portfolio"
+                onClick={handleNav}
+              >
+                Portfolio
+              </Link>
+            </motion.div>
           </li>
           <li className="text-zinc-900 dark:text-zinc-200 text-2xl hover:text-blue-400 w-full text-center">
-            <Link
-              className="dark:hover:text-blue-400 transition duration-150 ease-in-out"
-              href="/contact"
-              onClick={handleNav}
+            <motion.div
+              animate={showNav ? "open" : "closed"}
+              variants={menuVariants.contactVariant}
             >
-              Contact
-            </Link>
+              <Link
+                className="dark:hover:text-blue-400 transition duration-150 ease-in-out"
+                href="/contact"
+                onClick={handleNav}
+              >
+                Contact
+              </Link>
+            </motion.div>
           </li>
           <div className="flex flex-col fixed justify-center items-center bottom-20 p-4">
             <motion.div
               animate={showNav ? "open" : "closed"}
-              variants={showSocialsVariant}
+              variants={menuVariants.socialsVariant}
             >
               <SocialMedia style={"inline-flex"} />
             </motion.div>

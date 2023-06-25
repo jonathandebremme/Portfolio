@@ -50,15 +50,15 @@ export default function Homepage() {
               </Link>
             </div>
           </div>
-          {/*       <div className="mb-12 lg:mb-0 flex flex-col justify-center items-center">
-        <Image
-          src="/img/Profile_pic.jpg"
-          alt="Profile picture of Jonathan De Bremme"
-          width={400}
-          height={400}
-          className="dark:grayscale rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-2xl"
-        />
-      </div> */}
+          <div className="mb-12 lg:mb-0 flex flex-col justify-center items-center">
+            <Image
+              src="/img/profile_photo.jpg"
+              alt="Profile picture of Jonathan De Bremme"
+              width={400}
+              height={400}
+              className="dark:grayscale rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-2xl"
+            />
+          </div>
         </div>
       </div>
     </div>

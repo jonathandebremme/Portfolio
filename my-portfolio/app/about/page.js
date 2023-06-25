@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaMapPin,
   FaUniversity,
@@ -10,6 +11,7 @@ import { SiCss3, SiTailwindcss, SiExpress, SiNextdotjs } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 
 import Heading from "../components/Heading";
+import { skillLinks } from "../constants";
 
 export default function About() {
   return (
@@ -18,11 +20,11 @@ export default function About() {
       <div className="flex flex-col justify-center items-center mt-52 pb-20 px-6 mx-auto lg:w-2/3">
         <div className="flex flex-col min-w-0 break-words shadow-2xl rounded-xl bg-white dark:bg-slate-800">
           <div className="px-6">
-            {/*             <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center">
               <div className="w-full lg:w-2/3 px-4 lg:order-2 flex justify-center">
                 <div className="relative">
                   <Image
-                    src="/img/Profile_pic.jpg"
+                    src="/img/profile_photo.jpg"
                     alt="Profile picture of Jonathan De Bremme"
                     className="shadow-2xl rounded-full h-auto align-middle border-none absolute -m-[136px] -ml-20 lg:-ml-16"
                     style={{ maxWidth: "150px" }}
@@ -32,7 +34,7 @@ export default function About() {
                   />
                 </div>
               </div>
-            </div> */}
+            </div>
             <div className="text-center mt-12">
               <h3 className="text-4xl font-semibold leading-normal mb-2 text-zinc-900 dark:text-zinc-50">
                 Jonathan De Bremme
@@ -69,28 +71,72 @@ export default function About() {
       <Heading title="Skills" />
       <div className="flex flex-row flex-wrap justify-center items-center mb-40 mt-20 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="p-2 m-3 bg-orange-600 rounded-full shadow-xl">
-          <FaHtml5 className="w-7 h-7 text-white" />
+          <Link
+            href={skillLinks.html}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaHtml5 className="w-7 h-7 text-white" />
+          </Link>
         </div>
         <div className="p-2 m-3 bg-blue-600 rounded-full shadow-xl">
-          <SiCss3 className="w-7 h-7 text-white" />
+          <Link href={skillLinks.css} target="_blank" rel="noopener noreferrer">
+            <SiCss3 className="w-7 h-7 text-white" />
+          </Link>
         </div>
         <div className="p-2 m-3 bg-yellow-500 rounded-full shadow-xl">
-          <IoLogoJavascript className="w-7 h-7 text-white" />
+          <Link
+            href={skillLinks.javascript}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IoLogoJavascript className="w-7 h-7 text-white" />
+          </Link>
         </div>
         <div className="p-2 m-3 bg-zinc-600 rounded-full shadow-xl">
-          <FaReact className="w-7 h-7 text-white" />
+          <Link
+            href={skillLinks.react}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaReact className="w-7 h-7 text-cyan-500" />
+          </Link>
         </div>
         <div className="p-2 m-3 bg-lime-600 rounded-full shadow-xl">
-          <FaNodeJs className="w-7 h-7 text-white" />
+          <Link
+            href={skillLinks.nodejs}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaNodeJs className="w-7 h-7 text-white" />
+          </Link>
         </div>
         <div className="p-2 m-3 bg-gray-500 rounded-full shadow-xl">
-          <SiExpress className="w-7 h-7 text-white" />
+          <Link
+            href={skillLinks.express}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiExpress className="w-7 h-7 text-white" />
+          </Link>
         </div>
         <div className="p-2 m-3 bg-sky-400 rounded-full shadow-xl">
-          <SiTailwindcss className="w-7 h-7 text-white" />
+          <Link
+            href={skillLinks.tailwind}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiTailwindcss className="w-7 h-7 text-white" />
+          </Link>
         </div>
         <div className="p-2 m-3 bg-zinc-600 rounded-full shadow-xl">
-          <SiNextdotjs className="w-7 h-7 text-white" />
+          <Link
+            href={skillLinks.nextjs}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiNextdotjs className="w-7 h-7 text-white" />
+          </Link>
         </div>
       </div>
     </main>
