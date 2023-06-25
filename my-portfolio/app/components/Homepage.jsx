@@ -32,7 +32,7 @@ export default function Homepage() {
             <div>
               <a
                 className="inline-block px-7 py-3 mr-2 border-2 border-blue-400 bg-blue-400 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-green-300 hover:shadow-lg hover:border-green-300 focus:bg-zinc-50 focus:text-green-300 focus:border-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out"
-                href="./resume.pdf"
+                href="./resume-en.pdf"
                 role="button"
                 aria-label="Resume link button"
                 target="_blank"
