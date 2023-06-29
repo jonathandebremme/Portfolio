@@ -14,6 +14,18 @@ const skillLinks = {
   nextjs: "https://nextjs.org/",
 };
 
+const portfolioData = [
+  {
+    title: "Portfolio Site 2023",
+    imgUrl:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    alt: "Image for Jonathans portfolio site project",
+    description: "Portfolio site built with Next.js and Tailwind CSS",
+    repo: "https://github.com/jonathandebremme/Portfolio",
+    tags: ["#NEXTJS", "#TAILWINDCSS"],
+  },
+];
+
 const menuVariants = {
   logoVariant: {
     open: {
@@ -22,7 +34,7 @@ const menuVariants = {
       transition: {
         type: "spring",
         stiffness: 100,
-        delay: 0.25,
+        delay: 0.5,
       },
     },
     closed: { y: -300, opacity: 0 },
@@ -94,4 +106,4 @@ const menuVariants = {
   },
 };
 
-export { socialMediaLinks, skillLinks, menuVariants };
+export { socialMediaLinks, skillLinks, portfolioData, menuVariants };
