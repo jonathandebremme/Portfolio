@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -9,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { SiCss3, SiTailwindcss, SiExpress, SiNextdotjs } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
+import { motion } from "framer-motion";
 
 import Heading from "../components/Heading";
 import { skillLinks } from "../constants";
@@ -17,21 +20,36 @@ export default function About() {
   return (
     <main>
       <Heading title="About" paragraph="A little about me" />
-      <div className="flex flex-col justify-center items-center mt-52 pb-20 px-6 mx-auto lg:w-2/3">
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 100, delay: 1 }}
+        className="flex flex-col justify-center items-center mt-52 pb-20 px-6 mx-auto lg:w-2/3"
+      >
         <div className="flex flex-col min-w-0 break-words shadow-2xl rounded-xl bg-white dark:bg-slate-800">
           <div className="px-6">
             <div className="flex flex-wrap justify-center">
               <div className="w-full lg:w-2/3 px-4 lg:order-2 flex justify-center">
                 <div className="relative">
-                  <Image
-                    src="/img/profile_photo.jpg"
-                    alt="Profile picture of Jonathan De Bremme"
-                    className="shadow-2xl rounded-full h-auto align-middle border-none absolute -m-[136px] -ml-20 lg:-ml-16"
-                    style={{ maxWidth: "150px" }}
-                    width={150}
-                    height={150}
-                    priority
-                  />
+                  <motion.div
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 100,
+                      delay: 0.25,
+                    }}
+                  >
+                    <Image
+                      src="/img/profile_photo.jpg"
+                      alt="Profile picture of Jonathan De Bremme"
+                      className="shadow-2xl rounded-full h-auto align-middle border-none absolute -m-[136px] -ml-20 lg:-ml-16"
+                      style={{ maxWidth: "150px" }}
+                      width={150}
+                      height={150}
+                      priority
+                    />
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -52,92 +70,180 @@ export default function About() {
               <div className="flex flex-wrap justify-center">
                 <div className="w-full lg:w-9/12 px-4">
                   <p className="mb-4 text-lg leading-relaxed text-zinc-800 dark:text-zinc-200">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
+                    Hello! My name is Jonathan. I enjoy building applications
+                    with Javascript and broadening my knowledge of it&apos;s
+                    frameworks and libraries. I graduated at&nbsp;
+                    <a
+                      href="https://www.hogent.be/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="opacity-75 hover:underline"
+                    >
+                      HoGent
+                    </a>
+                    &nbsp; with an associate degree Computer Programming and am
+                    currently studying Applied Computer Science.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <Heading title="Skills" />
       <div className="flex flex-row flex-wrap justify-center items-center mb-40 mt-20 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="p-2 m-3 bg-orange-600 rounded-full shadow-xl">
-          <Link
-            href={skillLinks.html}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaHtml5 className="w-7 h-7 text-white" />
-          </Link>
-        </div>
-        <div className="p-2 m-3 bg-blue-600 rounded-full shadow-xl">
-          <Link href={skillLinks.css} target="_blank" rel="noopener noreferrer">
-            <SiCss3 className="w-7 h-7 text-white" />
-          </Link>
-        </div>
-        <div className="p-2 m-3 bg-yellow-500 rounded-full shadow-xl">
-          <Link
-            href={skillLinks.javascript}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IoLogoJavascript className="w-7 h-7 text-white" />
-          </Link>
-        </div>
-        <div className="p-2 m-3 bg-zinc-600 rounded-full shadow-xl">
-          <Link
-            href={skillLinks.react}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaReact className="w-7 h-7 text-cyan-500" />
-          </Link>
-        </div>
-        <div className="p-2 m-3 bg-lime-600 rounded-full shadow-xl">
-          <Link
-            href={skillLinks.nodejs}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaNodeJs className="w-7 h-7 text-white" />
-          </Link>
-        </div>
-        <div className="p-2 m-3 bg-gray-500 rounded-full shadow-xl">
-          <Link
-            href={skillLinks.express}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SiExpress className="w-7 h-7 text-white" />
-          </Link>
-        </div>
-        <div className="p-2 m-3 bg-sky-400 rounded-full shadow-xl">
-          <Link
-            href={skillLinks.tailwind}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SiTailwindcss className="w-7 h-7 text-white" />
-          </Link>
-        </div>
-        <div className="p-2 m-3 bg-zinc-600 rounded-full shadow-xl">
-          <Link
-            href={skillLinks.nextjs}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SiNextdotjs className="w-7 h-7 text-white" />
-          </Link>
-        </div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+          }}
+        >
+          <div className="p-2 m-3 bg-orange-600 rounded-full shadow-xl">
+            <Link
+              href={skillLinks.html}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaHtml5 className="w-7 h-7 text-white" />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 0.1,
+          }}
+        >
+          <div className="p-2 m-3 bg-blue-600 rounded-full shadow-xl">
+            <Link
+              href={skillLinks.css}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SiCss3 className="w-7 h-7 text-white" />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 0.2,
+          }}
+        >
+          <div className="p-2 m-3 bg-yellow-500 rounded-full shadow-xl">
+            <Link
+              href={skillLinks.javascript}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IoLogoJavascript className="w-7 h-7 text-white" />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 0.3,
+          }}
+        >
+          <div className="p-2 m-3 bg-zinc-600 rounded-full shadow-xl">
+            <Link
+              href={skillLinks.react}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaReact className="w-7 h-7 text-cyan-500" />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 0.4,
+          }}
+        >
+          <div className="p-2 m-3 bg-lime-600 rounded-full shadow-xl">
+            <Link
+              href={skillLinks.nodejs}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaNodeJs className="w-7 h-7 text-white" />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 0.5,
+          }}
+        >
+          <div className="p-2 m-3 bg-gray-500 rounded-full shadow-xl">
+            <Link
+              href={skillLinks.express}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SiExpress className="w-7 h-7 text-white" />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 0.6,
+          }}
+        >
+          <div className="p-2 m-3 bg-sky-400 rounded-full shadow-xl">
+            <Link
+              href={skillLinks.tailwind}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SiTailwindcss className="w-7 h-7 text-white" />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 0.7,
+          }}
+        >
+          <div className="p-2 m-3 bg-zinc-600 rounded-full shadow-xl">
+            <Link
+              href={skillLinks.nextjs}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SiNextdotjs className="w-7 h-7 text-white" />
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </main>
   );

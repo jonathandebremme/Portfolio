@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 export default function Homepage() {
   return (
@@ -14,7 +15,11 @@ export default function Homepage() {
       <div className="container mx-auto xl:px-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="mt-12 lg:mt-0">
-            <div>
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 100 }}
+            >
               <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">
                 I&apos;m Jonathan
                 <br />I build
@@ -28,8 +33,12 @@ export default function Homepage() {
                   />
                 </span>
               </h1>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 100, delay: 0.5 }}
+            >
               <a
                 className="inline-block px-7 py-3 mr-2 border-2 border-blue-400 bg-blue-400 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-green-300 hover:shadow-lg hover:border-green-300 focus:bg-zinc-50 focus:text-green-300 focus:border-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out"
                 href="./resume-en.pdf"
@@ -48,16 +57,22 @@ export default function Homepage() {
               >
                 Portfolio
               </Link>
-            </div>
+            </motion.div>
           </div>
           <div className="mb-12 lg:mb-0 flex flex-col justify-center items-center">
-            <Image
-              src="/img/profile_photo.jpg"
-              alt="Profile picture of Jonathan De Bremme"
-              width={400}
-              height={400}
-              className="dark:grayscale rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-2xl"
-            />
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 100, delay: 1 }}
+            >
+              <Image
+                src="/img/profile_photo.jpg"
+                alt="Profile picture of Jonathan De Bremme"
+                width={400}
+                height={400}
+                className="dark:grayscale rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-2xl"
+              />
+            </motion.div>
           </div>
         </div>
       </div>
